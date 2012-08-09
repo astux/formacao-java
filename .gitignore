@@ -4,3 +4,10 @@
 *.jar
 *.war
 *.ear
+
+#Binaries directory
+bin/**
+
+#Eclipse Files
+.classpath
+.project
