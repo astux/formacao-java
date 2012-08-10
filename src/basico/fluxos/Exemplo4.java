@@ -1,45 +1,25 @@
 package basico.fluxos;
 
-import java.util.Scanner;
-
 public class Exemplo4 {
 
-	public static void exemploWhile() {
-		int contador; // Declara variável de controle
-		contador = 1; // Inicializa variável de controle
-		while (contador <= 4) { // Testa a expressão
-			// Repete instruções
-			System.out.printf("Contador = %d\n", contador);
-			contador++; // Atualiza variável de controle
-		}
-		System.out.println("Terminado");
-	}
-
-	public static void exemploDoWhile() {
-		Scanner scan = new Scanner(System.in);
-		char aux = '0';
-		int contador = 0;
-		do {
-			System.out.println("Contador = " + contador);
-			System.out.print("Digite uma letra e ENTER: ");
-			aux = scan.next().charAt(0);
-			contador++;
-		} while (aux != 'Q');// Criterio de Parada
-		System.out.printf("Número de iterações: %d\n", contador);
-	}
-
-	public static void exemploFor() {
+	public static void exemploBreak() {
 		int numero = 20;
 		for (int i = 0; i < numero; i++) {
-			if (i % 2 == 0) {
-				System.out.printf("%d é um número par.", i);
+			if (i >= numero / 2) {
+				break;
 			} else {
-				System.out.printf("%d é um número impar.", i);
+				System.out.printf("Numero: %d\n", i);
 			}
 		}
 	}
-	
-	public static void exercicioLoop(){
-		
+
+	public static void exemploContinue() {
+		int numero = 10;
+		for (int i = 0; i < numero; i++) {
+			if (i % 2 == 0) {
+				continue;
+			}
+			System.out.printf("Numero: %d\n", i);
+		}
 	}
 }

@@ -14,7 +14,7 @@ public class Exemplo1 {
 
 		double d = c;
 		System.out.printf("Valor de d é: %f\n", d);
-		System.out.printf("c e d são iguais? %b", c == d);
+		System.out.printf("c e d são iguais? %b\n", c == d);
 		
 		char e = 116;
 		System.out.printf("Valor de e é: %c\n", e);
@@ -25,7 +25,7 @@ public class Exemplo1 {
 		int idade = 33;
 		menorDeIdade = idade < 18;
 
-		System.out.printf("É %b que sou menor de idade!", menorDeIdade);
+		System.out.printf("É %b que sou menor de idade!\n", menorDeIdade);
 	}
 
 	public static void variacaoPrimitivos() {
@@ -48,6 +48,7 @@ public class Exemplo1 {
 	}
 
 	public static void numeroDoChar() {
-		// Descobrir o número (codigo) de um determinado char
+		// Descobrir o numero (codigo) de um determinado char
+		System.out.printf("Codigo e: %d\n", (int) 'a');
 	}
 }
