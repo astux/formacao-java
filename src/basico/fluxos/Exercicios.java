@@ -3,11 +3,19 @@ package basico.fluxos;
 public class Exercicios {
 
 	public static void maiorQue() {
-		//Dado dois numeros, imprimir o maior numero, somente se ele for impar
+		// Dado dois numeros, imprimir o maior numero, somente se ele for impar
+		int x = 14;
+		int y = 28;
+
+		if (x > y && x % 2 == 1) {
+			System.out.printf("%d e o maior numero", x);
+		} else if (y > x && y % 2 == 1) {
+			System.out.printf("%d e o maior numero", y);
+		}
 	}
-	
+
 	public static void nomeDoMes() {
-		//dado o numero do mes, imprimir o nome do mes
+		// dado o numero do mes, imprimir o nome do mes
 		int numeroMes = 1;
 		String nomeMes = "";
 		switch (numeroMes) {
@@ -51,29 +59,30 @@ public class Exercicios {
 			nomeMes = "Mes invalido";
 			break;
 		}
-		
+
 		System.out.println(nomeMes);
 	}
-	
+
 	public static void inverterString() {
-		//dado uma String, inverter o seu nome
+		// dado uma String, inverter o seu nome
 		String nome = "Bruce Wayne";
 		String invertido = "";
-		
-		for (int i = nome.length()-1; i >=0 ; i--) {
+
+		for (int i = nome.length() - 1; i >= 0; i--) {
 			invertido += nome.charAt(i);
 		}
-		
+
 		System.out.println(invertido);
 	}
-	
+
 	public static void primos() {
-		//imprimir n primeiros os numeros primos
-		//Nota.: Um numero primo e um numero que e divisivel somente por 1 e por ele mesmo
+		// imprimir n primeiros os numeros primos
+		// Nota.: Um numero primo e um numero que e divisivel somente por 1 e
+		// por ele mesmo
 		int n = 10;
 		int contador = 0;
 		for (int i = 1; contador < n; i++) {
-			//verifica se i e primo
+			// verifica se i e primo
 			boolean primo = true;
 			for (int j = 2; j < i; j++) {
 				if (i % j == 0) {
@@ -81,17 +90,17 @@ public class Exercicios {
 					break;
 				}
 			}
-			//se i for primo incrementa o contador e imprime o valor
-			if(primo){
+			// se i for primo incrementa o contador e imprime o valor
+			if (primo) {
 				System.out.println(i);
-				contador++;	
+				contador++;
 			}
 		}
 	}
-	
+
 	public static void fibonacci() {
-		//imprimir n primeiros numeros da sequencia fibonacci
-		//0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …
+		// imprimir n primeiros numeros da sequencia fibonacci
+		// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …
 		int n = 10;
 		int primeiro = 0;
 		int incremento = 1;
