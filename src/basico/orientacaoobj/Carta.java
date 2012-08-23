@@ -13,7 +13,7 @@ public class Carta {
 		String valor = "";
 		switch (this.valor) {
 		case 1:
-			valor = "Ás";
+			valor = "As";
 			break;
 		case 11:
 			valor = "Valete";
@@ -34,5 +34,13 @@ public class Carta {
 
 	boolean maiorQue(Carta outraCarta) {
 		return this.valor > outraCarta.valor;
+	}
+
+	public int getValor() {
+		return valor;
+	}
+
+	public String getNaipe() {
+		return naipe;
 	}
 }
