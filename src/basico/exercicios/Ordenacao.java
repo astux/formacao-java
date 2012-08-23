@@ -16,8 +16,12 @@ public class Ordenacao {
 
 	public static void main(String[] args) {
 		int[] array = new int[] { 5, 3, 1, 2, 0, 4 };
-		swap(array, 1, 5);
+		order(array);
 		System.out.println(Arrays.toString(array));
+		//usando o metodo swap, ordene o array para que
+		//saida dessa execucao deve ser [0, 1, 2, 3, 4, 5]
+		//ps. o metodo deve ordenar as elementos de forma 
+		//qualquer array desordenado seja reordenado corretamente
 	}
 
 }
