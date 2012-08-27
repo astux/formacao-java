@@ -50,8 +50,14 @@ public class VelhaMatriz {
 	 * @return boolean com a resposta
 	 */
 	boolean tabPreenchido() {
-		// Dever de casa
-		return false;
+		for (int i = 0; i < tabuleiro.length; i++) {
+			for (int j = 0; j < tabuleiro[0].length; j++) {
+				if (tabuleiro[i][j] == 0) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	/**
@@ -77,7 +83,26 @@ public class VelhaMatriz {
 	 * @return boolean com a resposta
 	 */
 	boolean verificarVencedor(int jogador) {
-		// Dever de casa
+		for (int i = 0; i < 3; i++) {
+			if (tabuleiro[i][0] == jogador && tabuleiro[i][1] == jogador
+					&& tabuleiro[i][2] == jogador) {
+				return true;
+			}
+		}
+		for (int i = 0; i < 3; i++) {
+			if (tabuleiro[0][i] == jogador && tabuleiro[1][i] == jogador
+					&& tabuleiro[2][i] == jogador) {
+				return true;
+			}
+		}
+		if (tabuleiro[0][0] == jogador && tabuleiro[1][1] == jogador
+				&& tabuleiro[2][2] == jogador) {
+			return true;
+		}
+		if (tabuleiro[0][2] == jogador && tabuleiro[1][1] == jogador
+				&& tabuleiro[2][0] == jogador) {
+			return true;
+		}
 		return false;
 	}
 
@@ -114,11 +139,14 @@ public class VelhaMatriz {
 	 * Método que imprime no console o estado atual do jogo.
 	 */
 	void imprimirTabuleiro() {
-		System.out.printf("%c|%c|%c\n", tabRep(0, 0), tabRep(0, 1), tabRep(0, 2));
+		System.out.printf("%c|%c|%c\n", tabRep(0, 0), tabRep(0, 1),
+				tabRep(0, 2));
 		System.out.printf("-+-+-\n");
-		System.out.printf("%c|%c|%c\n", tabRep(1, 0), tabRep(1, 1), tabRep(1, 2));
+		System.out.printf("%c|%c|%c\n", tabRep(1, 0), tabRep(1, 1),
+				tabRep(1, 2));
 		System.out.printf("-+-+-\n");
-		System.out.printf("%c|%c|%c\n", tabRep(2, 0), tabRep(2, 1), tabRep(2, 2));
+		System.out.printf("%c|%c|%c\n", tabRep(2, 0), tabRep(2, 1),
+				tabRep(2, 2));
 	}
 
 	public static void main(String[] args) {
