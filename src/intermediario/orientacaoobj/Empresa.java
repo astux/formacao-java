@@ -1,4 +1,4 @@
-package basico.arrays;
+package intermediario.orientacaoobj;
 
 public class Empresa {
 	private String nome;

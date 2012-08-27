@@ -1,4 +1,4 @@
-package basico.arrays;
+package intermediario.orientacaoobj;
 
 public class Funcionario {
 	private String nome;
@@ -29,10 +29,14 @@ public class Funcionario {
 		return nome;
 	}
 
-	public boolean estaContratado(){
+	public boolean estaContratado() {
 		return empresa != null;
 	}
-	
+
+	public Double bonificacao() {
+		return salario * 0.1;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		Funcionario other = (Funcionario) obj;
