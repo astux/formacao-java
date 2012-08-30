@@ -7,6 +7,7 @@ public class Funcionario {
 
 	public Funcionario(String nome) {
 		this.nome = nome;
+		this.salario = 0.0;
 	}
 
 	public Double getSalario() {

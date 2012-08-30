@@ -32,9 +32,9 @@ public class Empresa {
 
 	public boolean demitir(Funcionario funcionario) {
 		for (int i = 0; i < funcionarios.length; i++) {
-			if (funcionarios[i] != null && funcionarios.equals(funcionarios[i])) {
-				funcionarios[i] = null;
+			if (funcionarios[i] != null && funcionario.equals(funcionarios[i])) {
 				funcionarios[i].setEmpresa(null);
+				funcionarios[i] = null;
 				return true;
 			}
 		}
@@ -42,8 +42,14 @@ public class Empresa {
 	}
 	
 	public double gastoComSalarios(){
-		//TODO
-		return 0;
+		double total = 0.0;
+		for (int i = 0; i < funcionarios.length; i++) {
+			if (funcionarios[i] != null) {
+				Funcionario aux = funcionarios[i];
+				total += aux.getSalario();
+			}
+		}
+		return total;
 	}
 	
 	public Funcionario encontrarFuncionario(Funcionario funcionario){
