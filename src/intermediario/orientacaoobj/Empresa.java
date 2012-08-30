@@ -40,8 +40,8 @@ public class Empresa {
 		}
 		return false;
 	}
-	
-	public double gastoComSalarios(){
+
+	public double gastoComSalarios() {
 		double total = 0.0;
 		for (int i = 0; i < funcionarios.length; i++) {
 			if (funcionarios[i] != null) {
@@ -51,14 +51,34 @@ public class Empresa {
 		}
 		return total;
 	}
-	
-	public Funcionario encontrarFuncionario(Funcionario funcionario){
-		//TODO
+
+	/**
+	 * Método que procura se determinado funcionario se encontra no quadro de
+	 * funcionarios da empresa, se sim, retornar a propria instancia do
+	 * funcionario, caso nao, retornar null. (lembrem-se de usar o metodo equals
+	 * de Funcionario)
+	 * 
+	 * @param funcionario
+	 *            a ser procurado.
+	 * @return instancia do Funcionario encontrado, caso nao seja encontrado
+	 *         retorna null.
+	 */
+	public Funcionario encontrarFuncionario(Funcionario funcionario) {
+		// TODO
 		return null;
 	}
-	
-	public boolean funcionarioContratado(Funcionario funcionario){
-		//TODO
+
+	/**
+	 * Verifica se funcionario se encontra no quadro de funcionarios, se sim,
+	 * retornar true, caso contrario retornar false.
+	 * 
+	 * @param funcionario
+	 *            a ser procurado.
+	 * @return boolean representando se ele se encontra ou nao entre os
+	 *         funcionarios.
+	 */
+	public boolean funcionarioContratado(Funcionario funcionario) {
+		// TODO
 		return false;
 	}
 }
