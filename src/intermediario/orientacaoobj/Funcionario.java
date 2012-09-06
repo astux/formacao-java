@@ -2,12 +2,12 @@ package intermediario.orientacaoobj;
 
 public class Funcionario {
 	private String nome;
-	private Double salario;
+	protected Double salario;
 	private Empresa empresa;
 
 	public Funcionario(String nome) {
 		this.nome = nome;
-		this.salario = 0.0;
+		this.salario = 500.0;
 	}
 
 	public Double getSalario() {
@@ -45,6 +45,11 @@ public class Funcionario {
 			return true;
 		}
 		return false;
+	}
+	
+	@Override
+	public String toString() {
+		return nome;
 	}
 
 }

@@ -1,14 +1,18 @@
 package intermediario.orientacaoobj;
 
+import java.util.Arrays;
+
 public class Empresa {
 	private String nome;
 	private String cnpj;
 	private Funcionario[] funcionarios;
+	private Funcionario[] blacklist;
 
 	public Empresa(String nome, String cnpj, int qtFuncionarios) {
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.funcionarios = new Funcionario[qtFuncionarios];
+		this.blacklist = new Funcionario[2 * qtFuncionarios];
 	}
 
 	public String getNome() {
@@ -20,10 +24,22 @@ public class Empresa {
 	}
 
 	public boolean contratar(Funcionario funcionario) {
+		if (verificarBlacklist(funcionario)) {
+			return false;
+		}
 		for (int i = 0; i < funcionarios.length; i++) {
 			if (funcionarios[i] == null) {
 				funcionarios[i] = funcionario;
 				funcionarios[i].setEmpresa(this);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean verificarBlacklist(Funcionario funcionario) {
+		for (int i = 0; i < blacklist.length; i++) {
+			if (blacklist[i] != null && funcionario.equals(blacklist[i])) {
 				return true;
 			}
 		}
@@ -35,10 +51,21 @@ public class Empresa {
 			if (funcionarios[i] != null && funcionario.equals(funcionarios[i])) {
 				funcionarios[i].setEmpresa(null);
 				funcionarios[i] = null;
+				adicionarBlacklist(funcionario);
 				return true;
 			}
 		}
 		return false;
+	}
+
+	private void adicionarBlacklist(Funcionario funcionario) {
+		for (int i = 0; i < blacklist.length; i++) {
+			if (blacklist[i] == null) {
+				blacklist[i] = funcionario;
+				break;
+			}
+		}
+		System.out.println(Arrays.toString(blacklist));
 	}
 
 	public double gastoComSalarios() {
@@ -50,6 +77,11 @@ public class Empresa {
 			}
 		}
 		return total;
+	}
+
+	public double gastoComBonificacao() {
+		// TODO fazer em casa
+		return 0.0;
 	}
 
 	/**
@@ -64,7 +96,11 @@ public class Empresa {
 	 *         retorna null.
 	 */
 	public Funcionario encontrarFuncionario(Funcionario funcionario) {
-		// TODO
+		for (int i = 0; i < funcionarios.length; i++) {
+			if (funcionarios[i] != null && funcionarios[i].equals(funcionario)) {
+				return funcionario;
+			}
+		}
 		return null;
 	}
 
@@ -78,7 +114,6 @@ public class Empresa {
 	 *         funcionarios.
 	 */
 	public boolean funcionarioContratado(Funcionario funcionario) {
-		// TODO
-		return false;
+		return (encontrarFuncionario(funcionario) != null);
 	}
 }
