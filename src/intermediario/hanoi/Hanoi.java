@@ -28,13 +28,17 @@ class Hanoi {
 
 	public void jogar() {
 		while (torres[torres.length-1].total() < numDiscos) {
+			Disco mov = null;
+			visualizar();
+			Map movimento = acao();
 			try {
-				visualizar();
-				Map movimento = acao();
-				Disco mov = torres[(Integer) movimento.get("origem")].remove();
+				mov = torres[(Integer) movimento.get("origem")].remove();
 				torres[(Integer) movimento.get("destino")].adiciona(mov);
 				movimentos++;
 			} catch (IllegalStateException | ArrayIndexOutOfBoundsException ex) {
+				if(mov != null){
+					torres[(Integer) movimento.get("origem")].adiciona(mov);	
+				}
 				mensagemErro();
 			}
 		}

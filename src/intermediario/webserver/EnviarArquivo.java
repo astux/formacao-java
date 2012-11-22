@@ -23,7 +23,7 @@ public class EnviarArquivo extends ProcessarRequisicao {
 		while(scan.hasNextLine()){
 			writer.println(scan.nextLine());
 		}
-		
+		writer.close();
 		scan.close();
 	}
 
